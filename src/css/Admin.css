@@ -1,0 +1,96 @@
+.main{
+    background-color:aqua
+}
+.maindiv{
+    width: 500px;
+    height: 100px;
+    align-content: center;
+    align-items: center;
+    
+}
+.button_about{
+    width: "100px";
+    height: "30px";
+    margin:"15px";
+    background-color:"Yellow";
+    position:"absolute";
+    border-radius:"5px";
+    text-align:"center";
+    left:"710px";
+    vertical-align: "middle";
+    float:"left";
+    padding:"4px"
+  };
+.button_show_all {
+    width: "100px";
+    height: "30px";
+    margin:"15px";
+    left:"910px";
+    background-color:"Green";
+    position:"absolute";
+    border-radius:"5px";
+    text-align:"center";
+    padding:"4px"
+  };
+.button_login{
+    width: "100px";
+    height: "30px";
+    margin:"15px";
+    left:"800px";
+    background-color:"Blue";
+    position:"absolute";
+    border-radius:"5px";
+    text-align:"center";
+    padding:"4px"
+  };
+.button_contacts {
+    width: "100px";
+    height: "30px";
+    margin:"15px";
+    left:"400px";
+    background-color:"Gray";
+    position:"absolute";
+    border-radius:"5px";
+    text-align:"center";
+    padding:"4px"
+  };
+.navbar {
+    height:"50px";
+    width: "100%" ;
+    position:"absolute";
+    align-content: "center";
+    background-color:"blue";
+    align-items: "center"
+  };
+  body {margin:0;}
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }

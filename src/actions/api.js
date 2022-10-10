@@ -14,5 +14,11 @@ export default {
             update: (id, updateRecord) => axios.put(url + id, updateRecord),
             delete: id => axios.delete(url + id)
         }
+    },
+    clients(url = baseUrl + 'dcandidate/') {
+        return {
+            fetchAll: () => axios.get(url),
+            fetchById: id => axios.get(url + id)
+        }
     }
 }

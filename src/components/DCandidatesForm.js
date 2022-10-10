@@ -1,6 +1,5 @@
 import { FormControl, Grid, InputLabel, MenuItem, TextField, Button, FormHelperText } from "@mui/material";
 import React, {useState, useEffect} from "react";
-import { ThemeConsumer } from "styled-components";
 import useForm from "./useForm"
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { connect } from "react-redux";
@@ -12,14 +11,14 @@ import * as actions from "../actions/dCandidate";
 const initialFieldValues={
     fullName:'',
     mobile:'',
-    enail:'',
+    email:'',
     age:'',
     bloodGroup: '',
     address:''
 }
 
 
-const DCandidateForm = (props) => {
+const DCandidateForm = ({...props}) => {
 
         const validate = (fieldValues = values) => {
         let temp = { ...errors }
@@ -46,10 +45,9 @@ const DCandidateForm = (props) => {
         handleInputChange,
         resetForm
     } = useForm(initialFieldValues, validate, props.setCurrentId)
+    
+    
     const inputLabel = React.useRef(null);
-
-
-
     const handleSubmit = e => {
         e.preventDefault()
         if (validate()) {
@@ -58,7 +56,7 @@ const DCandidateForm = (props) => {
             if (props.currentId == 0)
                 props.createDCandidate(values, onSuccess)
             else
-                props.createDCandidate(props.currentId, values, onSuccess) 
+                props.updateDCandidate(props.currentId, values, onSuccess) 
         }
         
     }
@@ -72,9 +70,12 @@ const DCandidateForm = (props) => {
     }, [props.currentId])
     return (
         <form onSubmit={handleSubmit} autoComplete="off" noValidate>
+            <div style={{fontSize:"20px" ,height:"10px",width:"300px", margin:"10px 5px 15px 0px"}}>
+            <a style={{ top:"100px", margin:"10px"}}>Add new record</a>
+            </div>
             <Grid>
                 <Grid>
-                    <TextField 
+                    <TextField style={{ margin:"10px",minWidth: 214}}
                     name="fullName"
                     variant="outlined"
                     label="Full Name"
@@ -83,7 +84,7 @@ const DCandidateForm = (props) => {
                     helperText = {errors.fullName}
                     {...(errors.fullName && { error: true, helperText: errors.fullName })}
                     />
-                    <TextField
+                    <TextField style={{margin:"10px",minWidth: 214}}
                         name="email"
                         variant="outlined"
                         label="Email"
@@ -91,7 +92,7 @@ const DCandidateForm = (props) => {
                         onChange={handleInputChange}
                         {...(errors.email && { error: true, helperText: errors.email })}
                     />
-                    <FormControl style={{minWidth: 214}} variant="outlined"
+                    <FormControl style={{margin:"10px",minWidth: 214}} variant="outlined"
                     {...(errors.bloodGroup && { error: true })}>
                         <InputLabel ref={inputLabel}>Blood Group</InputLabel>
                         <Select
@@ -113,7 +114,7 @@ const DCandidateForm = (props) => {
                     </FormControl>
                 </Grid>
                 <Grid item xs={6}>
-                    <TextField 
+                    <TextField  style={{margin:"10px",minWidth: 214}}
                         name="mobile"
                         variant="outlined"
                         label="Mobile"
@@ -121,14 +122,14 @@ const DCandidateForm = (props) => {
                         onChange={handleInputChange}
                         {...(errors.mobile && {error:true, helperText: errors.mobile})}
                     />
-                    <TextField 
+                    <TextField style={{ margin:"10px",minWidth: 214}}
                     name="age"
                     variant="outlined"
                     label="Age"
                     value={values.age}
                     onChange={handleInputChange}
                     />
-                    <TextField 
+                    <TextField style={{ margin:"10px",minWidth: 214}}
                     name="address"
                     variant="outlined"
                     label="Address"
@@ -136,7 +137,7 @@ const DCandidateForm = (props) => {
                     onChange={handleInputChange}
                     />
                     <div>
-                    <Button
+                    <Button style={{left:"5px", width:"97px", margin:"5px", position:"absolute"}}
                             variant="contained"
                             color="primary"
                             type="submit"
@@ -144,7 +145,7 @@ const DCandidateForm = (props) => {
                         >
                             Submit
                         </Button>
-                        <Button
+                        <Button style={{ width:"97px", left:"120px", margin:"5px", position:"absolute"}}
                             variant="contained"
                             onClick={resetForm}
                         >
