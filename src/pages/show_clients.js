@@ -150,15 +150,12 @@ const Clients = (props) => {
                     <Grid container>
                         <Paper elevation={12}>
                            <Grid>
+                            This all clients can take their result of analyses.
                                <TableContainer>
                                         <Table>
                                             <TableHead>
                                                 <TableRow >
                                                     <TableCell>Name</TableCell>
-                                                    <TableCell>Mobile</TableCell>
-                                                    <TableCell>BloodGroup</TableCell>
-                                                    <TableCell>Age</TableCell>
-                                                    <TableCell>Address</TableCell>
                                                     <TableCell>Email</TableCell>
                                                 </TableRow>
                                             </TableHead>
@@ -167,10 +164,6 @@ const Clients = (props) => {
                                                     props.dCandidateList.map((record, index) => {
                                                         return (<TableRow key={index} hover>
                                                             <TableCell>{record.fullName}</TableCell>
-                                                            <TableCell>{record.mobile}</TableCell>
-                                                            <TableCell>{record.bloodGroup}</TableCell>
-                                                            <TableCell>{record.age}</TableCell>
-                                                            <TableCell>{record.address}</TableCell>
                                                             <TableCell>{record.email}</TableCell>
                                                             <TableCell>
                                                             </TableCell>
