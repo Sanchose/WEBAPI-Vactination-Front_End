@@ -132,7 +132,7 @@ const About = () => {
 						</div>
 						</details>
 						<details>
-						<summary>Click to expand this details with a WAAPI sliding effect</summary>
+						<summary>Click to expand this details with a WEBPI sliding effect</summary>
 						<div class="content">
 							<p>
 							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
