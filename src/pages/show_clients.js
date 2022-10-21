@@ -131,7 +131,10 @@ const Clients = (props) => {
         position:"absolute",
         borderRadius:"8px",
         top:"200px",
-        left:"550px"
+        left:"700px"
+    }
+    const instruction ={
+        margin:"10px"
     }
     useEffect(() => {
         props.fetchAllDCandidates()
@@ -145,12 +148,12 @@ const Clients = (props) => {
                     <li><a href="http://localhost:3000/contact">Contacts</a></li>
                     <li style={{float:"right"}}><a className="active" href="http://localhost:3000/login">Login</a></li>
                 </ul>
-            <div style={clientes}>
+            <div className="all_clients" style={clientes}>
                 <Paper>
                     <Grid container>
                         <Paper elevation={12}>
                            <Grid>
-                            This all clients can take their result of analyses.
+                            <p style={instruction}>This all clients can take their result of analyses.</p>
                                <TableContainer>
                                         <Table>
                                             <TableHead>

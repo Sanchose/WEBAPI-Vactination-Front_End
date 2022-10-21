@@ -131,10 +131,11 @@ const DCandidates = (props) => {
     return ( 
         <div >
             <ul>
-				<li><a className="active" href="http://localhost:3000/contact">Contacts</a></li>
-				<li><a href="http://localhost:3000/clients">All Clients</a></li>
-				<li><a href="http://localhost:3000/login">Login</a></li>
-			</ul>
+					<li><a href="http://localhost:3000/">Home</a></li>
+					<li><a href="http://localhost:3000/clients">All Clients</a></li>
+					<li><a href="http://localhost:3000/contact">Contacts</a></li>
+					<li style={{float:"right"}}><a className="active" href="http://localhost:3000/">Log Out</a></li>
+				</ul>
         <Paper style={paper}>
             <Grid container>
                     <Paper elevation={12} style={update}>

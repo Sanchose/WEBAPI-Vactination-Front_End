@@ -106,9 +106,10 @@
   cursor: pointer;
 }
 details {
-  max-width: 500px;
+  max-width: 900px;
+  min-width: 900px;
   box-sizing: border-box;
-  margin-top: 5px;
+  margin-top: 1px;
   background: white;
 }
 details summary::-webkit-details-marker {
@@ -150,3 +151,18 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 ol {list-style-type: inherit;}
+
+.namen{
+  font-family: Verdana, sans-serif;
+  font-size: 30px;
+}
+.all_clients
+{
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}
+.contact_info
+{
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+}

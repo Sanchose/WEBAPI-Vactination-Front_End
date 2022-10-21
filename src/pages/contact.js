@@ -91,7 +91,49 @@ const Contact = () => {
       };
       const contact_text = {
         position:"absolute",
-        fontSize:"30px"
+        fontSize:"30px",
+        margin:"20px 20px 20px 20px",
+        color:"white"
+       };
+       const second_div = {
+        position:"absolute",
+        fontSize:"30px",
+        width:"600px",
+        height:"500px",
+        top:"75px",
+        left:"300px",
+        borderRadius:"30px",
+        backgroundColor:"#333"
+
+       };
+       const first_block = {
+        position:"absolute",
+        width:"200px",
+        height:"100px",
+        top:"300px",
+        borderRadius:"30px",
+        backgroundColor:"#04AA6D",
+        left:"1200px",
+       };
+       const second_block = {
+        position:"absolute",
+        width:"200px",
+        height:"180px",
+        backgroundColor:"#333",
+        top:"500px",
+        borderRadius:"30px",
+        backgroundColor:"#333",
+        left:"1500px",
+        color:"white"
+       };
+       const third_block = {
+        position:"absolute",
+        width:"200px",
+        height:"100px",
+        top:"700px",
+        borderRadius:"30px",
+        backgroundColor:"#111",
+        left:"1100px"
        };
 return (
     <div>
@@ -102,19 +144,18 @@ return (
               <li><a href="http://localhost:3000/contact">Contacts</a></li>
               <li style={{float:"right"}}><a className="active" href="http://localhost:3000/login">Login</a></li>
             </ul>
-            <Paper elevation={12} style={{top:"170px",left:"500px",position:"absolute",width:"1000px", height:"700px"}}>
-              <address style={contact_text}>
-                Write on email: <a href="mailto:sashapronehoda@gmail.com">Web-Lab@gmail.com</a>
-                <br />
-                Visit us at our website:<a href='http://localhost:3000/About'>Web-Lab.com</a>
-                <br />
-                Box 564, Disneyland
-                <br />
-                USA
-                <br />
-                <a href="http://maps.google.com/maps?q=210+Louise+Ave,+Nashville,+TN+37203">View map</a>
-              </address>
+            <Paper elevation={12} style={{ borderRadius:"30px", backgroundColor:"#04AA6D", top:"170px",left:"100px",position:"absolute",width:"900px", height:"650px"}}>
+              <div style={second_div}>
+                <address style={contact_text}>
+                   In today's world, ecology is very important for each of us, it is precisely this issue that our bio laboratory took up.
+                     The new equipment will allow conducting experiments on all types of substances and will show the most accurate results.
+                     You will also be served by our professional team, and we are currently recruiting researchers and students for internships.
+                </address>
+              </div>
             </Paper>
+            <div style={first_block}> <a className="all_clients" style={{ fontSize:"30px", position:"absolute", top:"25px", left:"45px"}} href="mailto:sashapronehoda@gmail.com">Mail us</a></div>
+            <div style={second_block}> <a style={{ fontSize:"20px", position:"absolute", top:"25px", left:"45px"}}>Location: <br /> Box 564, Disneyland <br/> USA</a></div>
+            <div style={third_block}><a className="all_clients" style={{ fontSize:"30px", position:"absolute", top:"25px", left:"20px"}} href="http://maps.google.com/maps?q=210+Louise+Ave,+Nashville,+TN+37203">View map</a></div>
             <div style={foot}>
               <div textAlign="center"  style={rights}><h4 style={{color:"White"}} >Copyright © biolab 2018, Developed by <a style={{ color:"#04AA6D"}} href="https://www.agar.io/">Tech Factory</a></h4></div>
             </div>

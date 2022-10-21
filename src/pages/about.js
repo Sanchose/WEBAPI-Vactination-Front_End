@@ -2,7 +2,8 @@ import { Paper } from "@mui/material";
 import { height } from "@mui/system";
 import React from "react";
 import '../css/Admin.css';
-import '../js/js'
+import '../js/js';
+import WebFont from 'webfontloader';
 
 const About = () => {
 	const button_about = {
@@ -92,7 +93,8 @@ const About = () => {
 	  };
 	  const clientes ={
 		height:"800px",
-		width: "1850px" ,
+		width:"auto",
+		minWidth: "1850px" ,
 		position:"absolute",
 		alignContent: "center",
 		backgroundColor:"white",
@@ -105,6 +107,36 @@ const About = () => {
 	const s = {
 		ListStyleType: "inherit"
 	}
+	const img_class = {
+		position:"absolute",
+		alignContent: "center",
+		backgroundColor:"white",
+		border: "3px solid #6699CC",
+		borderRadius:"2px",
+		alignItems: "center",
+		top:"100px",
+		left:"30px"
+	}
+	const info_class = {
+		position:"absolute",
+		alignContent: "center",
+		backgroundColor:"white",
+		alignItems: "center",
+		top:"100px",
+		left:"870px",
+		width:"800px",
+		fontFamily: "Verdana, sans-serif",
+	}
+	const namene = {
+		position:"absolute",
+		alignContent: "center",
+		backgroundColor:"red",
+		alignItems: "center",
+		borderRadius:"6px",
+		top:"550px",
+		left:"350px",
+		fontFamily: "Verdana, sans-serif",
+	}
 	return (
 		<div>
 			<div>
@@ -116,45 +148,56 @@ const About = () => {
 				</ul>
 			<div>
                 <Paper elevation={12} style={clientes}>
-					<img src={ require('../img/lab.jpg')}/>
-					<details>
-						<summary>I can change this too.</summary>
-						<div class="content">
-							<p>
-								<ol  style={{ listStyleType: "upper-roman" }}>
-									<il>sdfsdf</il> <br/>
-									<il>sdfsdf</il> <br/>
-									<il>sdfsdf</il> <br/>
-									<il>sdfsdf</il> <br/>
-									<il>sdfsdf</il> <br/>
-								</ol>
-							</p>
-						</div>
-						</details>
+					<div style={img_class} >
+						<Paper elevation={12}>
+							<img src={ require('../img/lab.jpg')}/>
+						</Paper>
+					</div>
+					<div style={namene} className="namen">
+						<Paper elevation={6}>
+							WEB-LAB
+						</Paper>
+					</div>
+					<div style={info_class}>
 						<details>
-						<summary>Click to expand this details with a WEBPI sliding effect</summary>
-						<div class="content">
-							<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
-							</p>
-							<img src="https://placebear.com/400/200" alt=""/>
-							<p>
-							Facilis ducimus iure officia quos possimus quaerat iusto, quas, laboriosam sapiente autem ab assumenda eligendi voluptatum nisi eius cumque, tempore reprehenderit optio placeat praesentium non sint repellendus consequuntur? Nihil, soluta.
-							</p>
-						</div>
+							<summary>About us</summary>
+							<div class="content">
+								<p>
+									<ol>
+										Web Lab is the latest laboratory that studies problems at the chemical level of
+											 water from different parts of the country.<br />
+											 We also conduct research on human analyzes of various types,
+											  and the result is guaranteed to be maximum, precisely because of our
+											   latest equipment. <br/>
+									</ol>	   
+								</p>
+							</div>
+							</details>
+							<details>
+							<summary>Services we offer</summary>
+							<div class="content">
+								<p>
+									<ol>
+											<li>Analyzes:</li><br/>
+											<li>different human</li><br/>
+											<li>different types of water</li><br/>
+											<li>virus tests</li><br/>
+											<li>and many others</li><br/>
+									</ol>	
+								</p>
+
+							</div>
+							</details>
+							<details>
+							<summary>Click to expand this details with a WAAPI sliding effect</summary>
+							<div class="content">
+								<p>
+								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
+								</p>
+
+							</div>
 						</details>
-						<details>
-						<summary>Click to expand this details with a WAAPI sliding effect</summary>
-						<div class="content">
-							<p>
-							Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
-							</p>
-							<img src="https://placebear.com/400/200" alt=""/>
-							<p>
-							Facilis ducimus iure officia quos possimus quaerat iusto, quas, laboriosam sapiente autem ab assumenda eligendi voluptatum nisi eius cumque, tempore reprehenderit optio placeat praesentium non sint repellendus consequuntur? Nihil, soluta.
-							</p>
-						</div>
-					</details>
+					</div>
                 </Paper>
             </div>
             <div style={foot}>
