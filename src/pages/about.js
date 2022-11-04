@@ -189,12 +189,13 @@ const About = () => {
 							</div>
 							</details>
 							<details>
-							<summary></summary>
+							<summary>Open days:</summary>
 							<div class="content">
-								<p>
-								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!
-								</p>
-
+								<p>Monday (9:00- 18:00)</p>
+								<p>Tuesday (9:00- 18:00)</p>
+								<p>Wednesday (9:00- 18:00)</p>
+								<p>Thursday (9:00- 18:00)</p>
+								<p>Friday (9:00- 18:00)</p>
 							</div>
 						</details>
 					</div>
