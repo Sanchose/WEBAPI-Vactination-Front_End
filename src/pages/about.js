@@ -164,11 +164,11 @@ const About = () => {
 							<div class="content">
 								<p>
 									<ol>
-										Web Lab is the latest laboratory that studies problems at the chemical level of
-											 water from different parts of the country.<br />
-											 We also conduct research on human analyzes of various types,
-											  and the result is guaranteed to be maximum, precisely because of our
-											   latest equipment. <br/>
+											Web Lab is the latest laboratory that studies problems at the chemical level of
+											water from different parts of the country.<br />
+											We also conduct research on human analyzes of various types,
+											and the result is guaranteed to be maximum, precisely because of our
+											latest equipment. <br/>
 									</ol>	   
 								</p>
 							</div>
@@ -189,7 +189,7 @@ const About = () => {
 							</div>
 							</details>
 							<details>
-							<summary>Click to expand this details with a WAAPI sliding effect</summary>
+							<summary></summary>
 							<div class="content">
 								<p>
 								Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi unde, ex rem voluptates autem aliquid veniam quis temporibus repudiandae illo, nostrum, pariatur quae! At animi modi dignissimos corrupti placeat voluptatum!

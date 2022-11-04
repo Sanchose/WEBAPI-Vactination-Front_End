@@ -1,23 +1,69 @@
-import { Paper } from "@mui/material";
-import React from "react";
-import { FormControl, Grid, InputLabel, MenuItem, TextField, Button, FormHelperText } from "@mui/material";
-import { padding } from "@mui/system";
+import React, { useState, useEffect } from "react";
 import '../css/Admin.css';
+import { connect } from "react-redux";
+import * as actions from "../actions/info";
+import { Button, ButtonGroup, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+import DCandidateForm from "../components/DCandidatesForm";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { AlignHorizontalCenter } from "@mui/icons-material";
+import { margin, padding, width } from "@mui/system";
+import Contact from "./contact";
 
-const Login = () => {
-	const button_about = {
-		width: "100px",
-		height: "30px",
-		margin:"15px",
-		backgroundColor:"Yellow",
+
+
+
+const Loginfo = (props) => {
+    const [currentId, setCurrentId] = useState(0)
+    const foot = {
+		height:"157px",
+		width: "100%" ,
 		position:"absolute",
-		borderRadius:"5px",
-		textAlign:"center",
-		left:"710px",
-		verticalAlign: "middle",
-		float:"left",
-        padding:"4px"
+		alignContent: "center",
+		backgroundColor:"#333",
+		border: "5px solid #333",
+		borderRadius:"3px",
+		alignItems: "center",
+		bottom:"-170px"
+		};
+	const rights = {
+		position:"absolute",
+		textAlign: "center",
+		top:"60px",
+		left:"700px"
 	  };
+    const button_about = {
+        width: "100px",
+        height: "60px",
+        backgroundColor:"Blue",
+        position:"absolute",
+        borderRadius:"5px",
+        textAlign:"center",
+        verticalAlign: "middle",
+        padding:"17px",
+        left:"0px"
+        
+      };
+      const button_show_all = {
+        width: "100px",
+        height: "30px",
+        margin:"15px",
+        left:"200px",
+        backgroundColor:"Blue",
+        position:"absolute",
+        borderRadius:"5px",
+        textAlign:"center"
+      };
+      const button_contacts = {
+        width: "100px",
+        height: "60px",
+        left:"100px",
+        backgroundColor:"Blue",
+        position:"absolute",
+        borderRadius:"5px",
+        padding:"17px",
+        textAlign:"center"
+      };
       const button_login = {
         width: "100px",
         height: "30px",
@@ -26,147 +72,130 @@ const Login = () => {
         backgroundColor:"Blue",
         position:"absolute",
         borderRadius:"5px",
-        textAlign:"center",
-        padding:"4px"
+        textAlign:"center"
       };
-	const button_show_all = {
-		width: "100px",
-		height: "30px",
-		margin:"15px",
-		left:"910px",
-		backgroundColor:"Green",
-		position:"absolute",
-		borderRadius:"5px",
-		textAlign:"center",
-        padding:"4px"
-	  };
-	const button_contacts = {
-		width: "100px",
-		height: "30px",
-		margin:"15px",
-		left:"400px",
-		backgroundColor:"Gray",
-		position:"absolute",
-		borderRadius:"5px",
-		textAlign:"center",
-        padding:"4px"
-	  };
-	const navbar = {
-		height:"50px",
-		width: "100%" ,
-		position:"absolute",
-		alignContent: "center",
-		backgroundColor:"RoyalBlue",
-		alignItems: "center"
-		};
-        const foot = {
-            height:"157px",
-            width: "100%" ,
-            position:"absolute",
-            alignContent: "center",
-            backgroundColor:"#333",
-            border: "5px solid #333",
-            borderRadius:"3px",
-            alignItems: "center",
-            bottom:"-170px"
-            };
-        const rights = {
-            position:"absolute",
-            textAlign: "center",
-            top:"60px",
-            left:"700px"
-          };
-	const lefts = {
-		textAlign: "center"
-	  };
-    const paper = {
-        width:"400px",
-        height:"405px",
-        top:"160px",
-        left:"37%",
-        position:"absolute"
-    };
-    const h1 ={
-        margin:"30px 20px 20px 145px",
-        left:"10px"
-    };
-    const login ={
-        width:"100px",
-        height:"40px",
-        backgroundColor:"blue",
-        margin:"30px 20px 20px 0px",
-        borderRadius:"5px",
-        top:"310px",
-        left:"55px",
-        textAlign:"center",
-        padding:"8px",
-        color:"white",
-        position:"absolute"
-    };
-    const backimage = {
+    
+      const update = {
+        border:"3px",
+        width: "270px",
+        height: "570px", 
+        position:"absolute",
+        alignContent: "center",
+        left:"30px",
+        top:"-10px",
+        borderRadius:"10px",
+        alignContent:"center"
+      };
+      const info = {
+        width: "1200px",
+        height: "auto",
+        position:"absolute",
+        top:"-10px",
+        left:"350px",
+        borderRadius:"10px",
+      };
+      const navbar = {
+        
+        width: "1920px",
+        height: "60px",
+        position:"absolute",
+        alignContent: "center",
+        backgroundColor:"Gray",
+        alignItems: "center"
+      };
+      const paper = {
+        
+        width: "auto",
+        height: "20px",
+        position:"absolute",
+        alignContent: "center",
+        margin:"10px",
+        top:" 100px",
+        backgroundColor:"White"
+      };
+      const backimage = {
 		width:"100%",
-		height:"1000px"
+		height:"1000px",
 	    };
-	return (
-		<div>
-			<div>
-                <div>
-                    <ul>
-                        <li><a href="http://localhost:3000/">Home</a></li>
-                        <li><a href="http://localhost:3000/clients">All Clients</a></li>
-                        <li><a href="http://localhost:3000/contact">Contacts</a></li>
-                        <li style={{float:"right"}}><a className="active" href="http://localhost:3000/login">Login</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <Paper elevation={12} style={paper}>
-                        <h1 style={h1}>Log in</h1>
-                        <TextField style={{ left:"45px", margin:"10px",minWidth: 300 }}
-                            InputProps={{
-                                sx: {
-                                    "& input": {
-                                    textAlign: "center"
-                                    }
-                                    }
-                                }}
-                            name="I"
-                            variant="outlined"
-                            label="Name"
-                        />
-                        <TextField style={{ left:"45px", margin:"10px",minWidth: 300}}
-                            InputProps={{
-                                sx: {
-                                    "& input": {
-                                    textAlign: "center"
-                                    }
-                                    }
-                                }}
-                            name="Email"
-                            variant="outlined"
-                            label="Email"
-                        />
-                        <TextField style={{ left:"45px", margin:"10px",minWidth: 300}}
-                            InputProps={{
-                            sx: {
-                                "& input": {
-                                textAlign: "center"
-                                }
-                                }
-                            }}
-                            name="Password"
-                            variant="outlined"
-                            label="Password"
-                        />
-                        <a style={login} href="http://localhost:3000/admin">Login</a>
-                    </Paper>
-                </div>
-				<div style={foot}>
-					<div textAlign="center"  style={rights}><h4 style={{color:"White"}} >Copyright © biolab 2018, Developed by <a style={{ color:"#04AA6D"}} href="https://www.agar.io/">Tech Factory</a></h4></div>
-				</div>
-                <img style={backimage} position="absolute" width="100%" height="100px"  src={ require('../img/6.jpg')} />
-			</div>
-		</div>
-);
-};
+    const li = {
+        display:"inline"
+    };
+    const images = {
+        position:"absolute"
+    };
+    const first_block = {
+        position:"absolute"
+    }
+    const clientes ={
+        position:"absolute",
+        borderRadius:"8px",
+        top:"200px",
+        left:"700px"
+    }
+    const instruction ={
+        margin:"10px"
+    }
+    useEffect(() => {
+        props.fetchAllInfo()
+    }, [])
+    return ( 
+        <div>
+            <div>
+                <ul>
+                    <li><a href="http://localhost:3000/">Home</a></li>
+                    <li><a href="http://localhost:3000/clients">All Clients</a></li>
+                    <li><a href="http://localhost:3000/contact">Contacts</a></li>
+                    <li style={{float:"right"}}><a className="active" href="http://localhost:3000/login">Login</a></li>
+                </ul>
+            <div className="all_clients" style={clientes}>
+                <Paper>
+                    <Grid container>
+                        <Paper elevation={12}>
+                           <Grid>
+                            <p style={instruction}>This all clients can take their result of analyses.</p>
+                               <TableContainer>
+                                        <Table>
+                                            <TableHead>
+                                                <TableRow >
+                                                    <TableCell>Name</TableCell>
+                                                    <TableCell>Email</TableCell>
+                                                </TableRow>
+                                            </TableHead>
+                                            <TableBody>
+                                                {
+                                                    props.InfoList.map((record, index) => {
+                                                        return (<TableRow key={index} hover>
+                                                            <TableCell>{record.login}</TableCell>
+                                                            <TableCell>{record.password}</TableCell>
+                                                            <TableCell>
+                                                            </TableCell>
+                                                        </TableRow>)
+                                                    })
+                                                }
+                                            </TableBody>
+                                        </Table>
+                                    </TableContainer>
+                                </Grid>
+                            </Paper>
+                    </Grid>
+                </Paper>
+            </div>
+            <div style={foot}>
+                <div textAlign="center"  style={rights}><h4 style={{color:"White"}} >Copyright © biolab 2018, Developed by <a style={{ color:"#04AA6D"}} href="https://www.agar.io/">Tech Factory</a></h4></div>
+            </div>
+            </div>
+            <div>
+                <img style={backimage} position="absolute" width="100%" height="100px" src={ require('../img/6.jpg')} />
+            </div>
+        </div>
+    );
+}
+const mapStateToProps = state => ({
+    InfoList: state.info.list
+})
 
-export default Login;
+const mapActionToProps = {
+    fetchAllInfo: actions.fetchAll,
+}
+
+export default connect(mapStateToProps, mapActionToProps)(Loginfo); 

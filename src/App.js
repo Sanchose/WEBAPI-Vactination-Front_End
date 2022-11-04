@@ -15,13 +15,13 @@ function App() {
     <Provider store={store}>
       <Container maxWidth="lg"></Container>
       <Router>
-    <Routes>
-        <Route path='/clients' element={<Clients/>} />
-        <Route path='/admin' element={<DCandidates/>} />
-        <Route path='/contact' element={<Contact/>} />
-        <Route path='/' element={<About/>}/>
-        <Route path='/login' element={<Login/>}/>
-    </Routes>
+      <Routes>
+          <Route path='/clients' element={<Clients/>} />
+          <Route path='/admin' element={<DCandidates/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/' element={<About/>}/>
+          <Route path='/login' element={<Login/>}/>
+      </Routes>
     </Router>
     </Provider>
   );

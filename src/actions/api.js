@@ -20,5 +20,11 @@ export default {
             fetchAll: () => axios.get(url),
             fetchById: id => axios.get(url + id)
         }
+    },
+    info(url = baseUrl + 'PrivateData/') {
+        return {
+            fetchAll: () => axios.get(url),
+            fetchById: id => axios.get(url + id)
+        }
     }
 }
